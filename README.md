@@ -4,9 +4,21 @@
 
 ##const
 
-##Spread operator
+##Spread operator (оператор разворота)
+Convert array into its separate values
+```javascript
+functionName(...array);
+```
 
 ##Template strings
+Consider `name` is variable
+```javascript
+`Hello ${name}`
+```
+You can make calculations inside template string
+```javascript
+`${parseInt(x) + parseInt(y)}`
+```
 
 ##Function parameters
 
@@ -24,4 +36,5 @@ for (let i in array) {
 
 for (let i of array) {
    console.log(i); // prints 'one', 'two', 'three'
+}
 ```
