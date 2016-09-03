@@ -9,6 +9,14 @@ Convert array into its separate values
 ```javascript
 functionName(...array);
 ```
+####Copy array values
+```javascript
+var arrayCopyES6 = [...array];
+```
+or
+```javascript
+var arrayCopy = [].concat(array);
+```
 
 ##Template strings
 Consider `name` is variable
