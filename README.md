@@ -18,7 +18,9 @@ or
 var arrayCopy = [].concat(array);
 ```
 
-##Template strings
+##Template strings (literals)
+Template literals are enclosed by the back-tick ``` ` ` ```
+
 Consider `name` is variable
 ```javascript
 `Hello ${name}`
@@ -26,6 +28,18 @@ Consider `name` is variable
 You can make calculations inside template string
 ```javascript
 `${parseInt(x) + parseInt(y)}`
+```
+
+##Multi-line strings
+Use back-tick  ``` `` ``` for multi-line strings instead of concatenation ``` '\n' + '' ```
+```javascript
+const template6 =
+`<li>
+  <div class="view">
+    <label></label>
+  </div>
+  <input class="edit" value="">
+</li>`;
 ```
 
 ##Function parameters
