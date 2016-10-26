@@ -11,11 +11,20 @@ functionName(...array);
 ```
 ####Copy array values
 ```javascript
-var arrayCopyES6 = [...array];
+let arrayCopyES6 = [...array];
+let concatenatedArray = [...array1, ...array2, ...array3]
 ```
 or
 ```javascript
-var arrayCopy = [].concat(array);
+var arrayCopy = [].concat(array);  // ES5 way
+```
+ES5
+```javascript
+Math.max.apply(Math, [2,100,1,6,43]) // 100
+```
+ES6
+```javascript
+Math.max(...[2,100,1,6,43]) // 100
 ```
 
 ##Template strings (literals)
