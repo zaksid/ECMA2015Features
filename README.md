@@ -29,6 +29,28 @@ You can make calculations inside template string
 ```
 
 ##Function parameters
+Set default values
+```javascript
+function greet(greeting = 'Hello', name = 'friend') {
+    ...
+}
+```
+Iterate throught parameters
+```javascript
+function sum(...values) {
+    let sum = 0;
+
+    values.forEach(function(value) {
+        sum += value;
+    });
+```
+    OR
+```javascript
+    values.reduce(function(prevValue, currentValue) {
+        return prevValue + currentValue;
+    });
+}
+```
 
 ##for...of
 
