@@ -91,3 +91,46 @@ for (let i of array) {
    console.log(i); // prints 'one', 'two', 'three'
 }
 ```
+
+##Arrow functions
+
+**Стрелка должна идти сразу после параметров, на той же строке**
+####Two or more parameters - in brackets ```( )```
+```javascript
+let add = (x, y) => x + y;
+```
+####One param - without brackets ```( )```
+```javascript
+let square = x => x * x;
+```
+####Without params
+```javascript
+let answer = () => 42;
+```
+####With multiple lines - braces ```{ }```
+```javascript
+let multiply = (x, y) => {
+    let result = x * y;
+    return result;
+};
+```
+####Returning object - use brackets ```( )```
+```javascript
+let getPerson = () => ({
+    name: 'John'
+});
+```
+####IIFE (immediately invoked function expression)
+```javascript
+(() => console.log('IIFE'))();
+```
+---
+* В стрелочной функции значение this береться из контекста (i.e. window for setTimeout())
+* Нельзя использовать как конструкторы объектов
+```javascript
+let Task = () => console.log('Creating task');
+let task = new Task();
+```
+```> Uncaught TypeError: Task is not a constructor```
+
+* Нельзя использовать методы ```bind()```, ```call()```, ```apply()```
