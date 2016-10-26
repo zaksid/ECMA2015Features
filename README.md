@@ -132,5 +132,108 @@ let Task = () => console.log('Creating task');
 let task = new Task();
 ```
 ```> Uncaught TypeError: Task is not a constructor```
-
 * Нельзя использовать методы ```bind()```, ```call()```, ```apply()```
+
+##Destructuring Assignment (Деструктивное присваивание)
+###Array destructing
+```javascript
+let languages = ['JS', 'PHP', 'Python', 'Ruby'];
+let [js, php, py, rb] = languages;
+```
+or
+```javascript
+let [js, php, py, rb] = ['JS', 'PHP', 'Python', 'Ruby'];
+```
+####Пропустить значение
+```javascript
+let scores = [3, 4, 5];
+let [low, , high] = scores;
+```
+```> 3 5```
+####Присвоить остаток массива
+```javascript
+let scores = [3, 4, 5, 6, 7];
+let [low, , high, ...rest] = scores;
+
+console.log(low, high, rest);
+```
+```> 3 5 [6, 7]```
+####Использовать параметры по умолчанию
+```javascript
+let scores = [3, 4, 7];
+let [low, mid, high = 5, upper = 9] = scores;
+```
+```> 3 4 7 9```
+####Если содержит вложенный массив
+```javascript
+let scores = [3, 4, [5, 6]];
+let [low, mid, high] = scores;
+
+console.log(low, mid, high);
+```
+```> 3 4 [5, 6]```
+
+Вытащить значения из сложенного массива:
+```javascript
+let scores = [3, 4, [5, 6]];
+let [low, mid, [high, higher]] = scores;
+
+console.log(low, mid, high, higher);
+```
+```> 3 4 5 6```
+####As function params
+```javascript
+function computeScore([low, mid]) {
+    console.log(low, mid);
+}
+
+computeScore([3, 4]);
+```
+####As a returned value from function
+```javascript
+function getScores() {
+    return [3, 4, 5];
+}
+
+let [rLow, rMid, rHigh] = getScores();
+console.log(rLow, rMid, rHigh);
+```
+####Swap values
+```javascript
+let yes = 'Yes';
+let no = 'No';
+
+[yes, no] = [no, yes];
+```
+
+###Object destructing
+
+```javascript
+let person = {
+    firstName: 'John',
+    lastName: 'Doe'
+};
+
+let {firstName, lastName, age = 25} = person;
+```
+**Имена переменных должны совпадать с именами свойств объекта. Иначе:**
+```javascript
+let {firstName: first, lastName: last} = person;
+```
+####As a returned value from function
+```javascript
+function getUserInfo() {
+    return  {
+        firstName: 'John',
+        lastName: 'Doe',
+        social: {
+            facebook: 'johndoe',
+            twitter: 'jdoe'
+        }
+    };
+}
+
+let {firstName: fname, lastName: lname, social: { twitter } } = getUserInfo();
+console.log(fname, lname, twitter);
+```
+```> John Doe jdoe```
