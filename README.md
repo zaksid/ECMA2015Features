@@ -237,3 +237,6 @@ let {firstName: fname, lastName: lname, social: { twitter } } = getUserInfo();
 console.log(fname, lname, twitter);
 ```
 ```> John Doe jdoe```
+
+
+Object spread only includes own, enumerable properties. That means you lose methods when you spread instances of an object.
