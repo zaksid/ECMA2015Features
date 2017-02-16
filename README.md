@@ -52,7 +52,7 @@ You can make calculations inside template string
 `${parseInt(x) + parseInt(y)}`
 ```
 
-##Multi-line strings <a href="multiline"></a>
+##Multi-line strings <a name="multiline"></a>
 Use back-tick  ``` `` ``` for multi-line strings instead of concatenation ``` '\n' + '' ```
 ```javascript
 const template6 =
