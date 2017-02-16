@@ -1,5 +1,10 @@
 # ECMA2015Features
 
+Materials:
+
+[CodeDojo. Основы ES6 (Youtube)](https://www.youtube.com/playlist?list=PLqHlAwsJRxAOpWPtj2T6HhSzX-lKmKV2q)
+
+
 ### Сontent
 * [let](#let)
 * [const](#const)
@@ -13,6 +18,8 @@
   * [Array destructing](#arraydestruction)
   * [Object destructing](#objectdestructing)
 * [Objects](#objects)
+* [Classes](#classes)
+  * [Inheritance](#inheritance)
 
 ---
 
@@ -161,7 +168,7 @@ let Task = () => console.log('Creating task');
 let task = new Task();
 ```
 ```> Uncaught TypeError: Task is not a constructor```
-* Нельзя использовать методы ```bind()```, ```call()```, ```apply()```
+* Нельзя использовать методы `bind()`, `call()`, `apply()`
 
 
 <a name="destruction"></a>
@@ -295,6 +302,66 @@ let person = {
 console.log(person);
 person.sayHello();
 ```
+
+``` Object {firstName: "Bill", lastName: "Gates"} Hi! My name is Bill Gates```
+
+
+<a name="classes"></a>
+## Classes
+
+* Классы не попадают в глобальное пространство имен (window в браузере).
+* Классы не всплывают (hoisting).
+
+```javascript
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+
+    speak() {
+        console.log(this.name + ' makes a noise.');
+    }
+}
+
+const animal = new Animal('animal');
+animal.speak(); // animal makes a noise.
 ```
-> Object {firstName: "Bill", lastName: "Gates"}
-  Hi! My name is Bill Gates```
+* Class declaration
+```javascript
+class Clazz { ... }
+```
+* Class expression
+```javascript
+let Clazz = class Clazz { ... }
+```
+  * +inheritance
+```javascript
+let SubClazz = class extends Clazz { ... }
+```
+
+<a name="inheritance"></a>
+### Inheritance
+
+```javascript
+class Task {
+    constructor(param) {
+        ...
+    }
+
+    method() {
+        ...
+    }
+}
+
+class SubTask extends Task {
+    constructor(param) {
+        super(param);
+        ...
+    }
+
+    method() {
+        super.method();
+        ...
+    }
+}
+```
