@@ -13,11 +13,15 @@
   * [Array destructing](#arraydestruction)
   * [Object destructing](#objectdestructing)
 
-##let <a href="let"></a>
+<a name="let"></a>
+##let
 
-##const <a href="const"></a>
+<a name="const"></a>
+##const
 
-##Spread operator (оператор разворота) <a href="spread"></a>
+
+<a name="spread"></a>
+##Spread operator (оператор разворота) 
 Convert array into its separate values
 ```javascript
 functionName(...array);
@@ -40,7 +44,9 @@ ES6
 Math.max(...[2, 100, 1, 6, 43]) // 100
 ```
 
-##Template strings (literals) <a href="template"></a>
+
+<a name="template"></a>
+##Template strings (literals)
 Template literals are enclosed by the back-tick ``` ` ` ```
 
 Consider `name` is variable
@@ -52,7 +58,8 @@ You can make calculations inside template string
 `${parseInt(x) + parseInt(y)}`
 ```
 
-##Multi-line strings <a name="multiline"></a>
+<a name="multiline"></a>
+##Multi-line strings
 Use back-tick  ``` `` ``` for multi-line strings instead of concatenation ``` '\n' + '' ```
 ```javascript
 const template6 =
@@ -64,7 +71,9 @@ const template6 =
 </li>`;
 ```
 
-##Function parameters <a href="funcparam"></a>
+
+<a name="funcparam"></a>
+##Function parameters
 Set default values
 ```javascript
 function greet(greeting = 'Hello', name = 'friend') {
@@ -88,7 +97,9 @@ function sum(...values) {
 }
 ```
 
-##for...of <a href="forof"></a>
+
+<a name="forof"></a>
+##for...of
 
 [MDN for...of](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for...of)
 
@@ -105,7 +116,9 @@ for (let i of array) {
 }
 ```
 
-##Arrow functions <a href="arrow"></a>
+
+<a name="arrow"></a>
+##Arrow functions
 
 **Стрелка должна идти сразу после параметров, на той же строке.**
 ####Two or more parameters - in brackets ```( )```
@@ -147,8 +160,12 @@ let task = new Task();
 ```> Uncaught TypeError: Task is not a constructor```
 * Нельзя использовать методы ```bind()```, ```call()```, ```apply()```
 
-##Destructuring Assignment (Деструктивное присваивание) <a href="destruction"></a>
-###Array destructing <a href="arraydestruction"></a>
+
+<a name="destruction"></a>
+##Destructuring Assignment (Деструктивное присваивание)
+
+<a name="arraydestruction"></a>
+###Array destructing
 ```javascript
 let languages = ['JS', 'PHP', 'Python', 'Ruby'];
 let [js, php, py, rb] = languages;
@@ -219,7 +236,8 @@ let no = 'No';
 [yes, no] = [no, yes];
 ```
 
-###Object destructing <a href="objectdestructing"></a>
+<a name="objectdestructing"></a>
+###Object destructing
 
 ```javascript
 let person = {
