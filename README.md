@@ -1,17 +1,17 @@
 # ECMA2015Features
 
 ### Сontent
-* [let](let)
-* [const](const)
-* [Spread operator](spread)
-* [Template strings](template)
-* [Multi-line strings](multiline)
-* [Function parameters](funcparam)
-* [for...of](forof)
-* [Arrow functions](arrow)
-* [Destructuring Assignment](destruction)
-  * [Array destructing](arraydestruction)
-  * [Object destructing](objectdestructing)
+* [let](#let)
+* [const](#const)
+* [Spread operator](#spread)
+* [Template strings](#template)
+* [Multi-line strings](#multiline)
+* [Function parameters](#funcparam)
+* [for...of](#forof)
+* [Arrow functions](#arrow)
+* [Destructuring Assignment](#destruction)
+  * [Array destructing](#arraydestruction)
+  * [Object destructing](#objectdestructing)
 
 ##let <a href="let"></a>
 
