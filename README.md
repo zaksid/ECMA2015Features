@@ -12,21 +12,24 @@
 * [Destructuring Assignment](#destruction)
   * [Array destructing](#arraydestruction)
   * [Object destructing](#objectdestructing)
+* [Objects](#objects)
+
+---
 
 <a name="let"></a>
-##let
+## let
 
 <a name="const"></a>
-##const
+## const
 
 
 <a name="spread"></a>
-##Spread operator (оператор разворота) 
+## Spread operator (оператор разворота) 
 Convert array into its separate values
 ```javascript
 functionName(...array);
 ```
-####Copy array values
+#### Copy array values
 ```javascript
 let arrayCopyES6 = [...array];
 let concatenatedArray = [...array1, ...array2, ...array3]
@@ -46,7 +49,7 @@ Math.max(...[2, 100, 1, 6, 43]) // 100
 
 
 <a name="template"></a>
-##Template strings (literals)
+## Template strings (literals)
 Template literals are enclosed by the back-tick ``` ` ` ```
 
 Consider `name` is variable
@@ -59,7 +62,7 @@ You can make calculations inside template string
 ```
 
 <a name="multiline"></a>
-##Multi-line strings
+## Multi-line strings
 Use back-tick  ``` `` ``` for multi-line strings instead of concatenation ``` '\n' + '' ```
 ```javascript
 const template6 =
@@ -73,7 +76,7 @@ const template6 =
 
 
 <a name="funcparam"></a>
-##Function parameters
+## Function parameters
 Set default values
 ```javascript
 function greet(greeting = 'Hello', name = 'friend') {
@@ -89,7 +92,7 @@ function sum(...values) {
         sum += value;
     });
 ```
-    OR
+or
 ```javascript
     values.reduce(function(prevValue, currentValue) {
         return prevValue + currentValue;
@@ -99,7 +102,7 @@ function sum(...values) {
 
 
 <a name="forof"></a>
-##for...of
+## for...of
 
 [MDN for...of](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for...of)
 
@@ -118,35 +121,35 @@ for (let i of array) {
 
 
 <a name="arrow"></a>
-##Arrow functions
+## Arrow functions
 
 **Стрелка должна идти сразу после параметров, на той же строке.**
-####Two or more parameters - in brackets ```( )```
+#### Two or more parameters - in brackets ```( )```
 ```javascript
 let add = (x, y) => x + y;
 ```
-####One param - without brackets ```( )```
+#### One param - without brackets ```( )```
 ```javascript
 let square = x => x * x;
 ```
-####Without params
+#### Without params
 ```javascript
 let answer = () => 42;
 ```
-####With multiple lines - braces ```{ }```
+#### With multiple lines - braces ```{ }```
 ```javascript
 let multiply = (x, y) => {
     let result = x * y;
     return result;
 };
 ```
-####Returning object - use brackets ```( )```
+#### Returning object - use brackets ```( )```
 ```javascript
 let getPerson = () => ({
     name: 'John'
 });
 ```
-####IIFE (immediately invoked function expression)
+#### IIFE (immediately invoked function expression)
 ```javascript
 (() => console.log('IIFE'))();
 ```
@@ -162,10 +165,10 @@ let task = new Task();
 
 
 <a name="destruction"></a>
-##Destructuring Assignment (Деструктивное присваивание)
+## Destructuring Assignment (Деструктивное присваивание)
 
 <a name="arraydestruction"></a>
-###Array destructing
+### Array destructing
 ```javascript
 let languages = ['JS', 'PHP', 'Python', 'Ruby'];
 let [js, php, py, rb] = languages;
@@ -174,13 +177,13 @@ or
 ```javascript
 let [js, php, py, rb] = ['JS', 'PHP', 'Python', 'Ruby'];
 ```
-####Пропустить значение
+#### Пропустить значение
 ```javascript
 let scores = [3, 4, 5];
 let [low, , high] = scores;
 ```
 ```> 3 5```
-####Присвоить остаток массива
+#### Присвоить остаток массива
 ```javascript
 let scores = [3, 4, 5, 6, 7];
 let [low, , high, ...rest] = scores;
@@ -188,13 +191,13 @@ let [low, , high, ...rest] = scores;
 console.log(low, high, rest);
 ```
 ```> 3 5 [6, 7]```
-####Использовать параметры по умолчанию
+#### Использовать параметры по умолчанию
 ```javascript
 let scores = [3, 4, 7];
 let [low, mid, high = 5, upper = 9] = scores;
 ```
 ```> 3 4 7 9```
-####Если содержит вложенный массив
+#### Если содержит вложенный массив
 ```javascript
 let scores = [3, 4, [5, 6]];
 let [low, mid, high] = scores;
@@ -211,7 +214,7 @@ let [low, mid, [high, higher]] = scores;
 console.log(low, mid, high, higher);
 ```
 ```> 3 4 5 6```
-####As function params
+#### As function params
 ```javascript
 function computeScore([low, mid]) {
     console.log(low, mid);
@@ -220,7 +223,7 @@ function computeScore([low, mid]) {
 computeScore([3, 4]);
 ```
 ```> 3 4```
-####As a returned value from function
+#### As a returned value from function
 ```javascript
 function getScores() {
     return [3, 4, 5];
@@ -230,7 +233,7 @@ let [rLow, rMid, rHigh] = getScores();
 console.log(rLow, rMid, rHigh);
 ```
 ```> 3 4```
-####Swap values
+#### Swap values
 ```javascript
 let yes = 'Yes';
 let no = 'No';
@@ -239,7 +242,7 @@ let no = 'No';
 ```
 
 <a name="objectdestructing"></a>
-###Object destructing
+### Object destructing
 
 ```javascript
 let person = {
@@ -253,7 +256,7 @@ let {firstName, lastName, age = 25} = person;
 ```javascript
 let {firstName: first, lastName: last} = person;
 ```
-####As a returned value from function
+#### As a returned value from function
 ```javascript
 function getUserInfo() {
     return  {
@@ -271,5 +274,27 @@ console.log(fname, lname, twitter);
 ```
 ```> John Doe jdoe```
 
-
 Object spread only includes own, enumerable properties. That means you lose methods when you spread instances of an object.
+
+
+<a name="objects"></a>
+## Objects
+Если названия свойств совпадают с названиями переменных - можно указать только свойства.
+```javascript
+let firstName = 'Bill',
+    lastName = 'Gates';
+
+let person = {
+    firstName,
+    lastName,
+    sayHello() {
+        console.log(`Hi! My name is ${firstName} ${lastName}`);
+    }
+};
+
+console.log(person);
+person.sayHello();
+```
+```
+> Object {firstName: "Bill", lastName: "Gates"}
+  Hi! My name is Bill Gates```
