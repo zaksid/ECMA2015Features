@@ -219,6 +219,7 @@ function computeScore([low, mid]) {
 
 computeScore([3, 4]);
 ```
+```> 3 4```
 ####As a returned value from function
 ```javascript
 function getScores() {
@@ -228,6 +229,7 @@ function getScores() {
 let [rLow, rMid, rHigh] = getScores();
 console.log(rLow, rMid, rHigh);
 ```
+```> 3 4```
 ####Swap values
 ```javascript
 let yes = 'Yes';
