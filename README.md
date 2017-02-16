@@ -1,10 +1,23 @@
 # ECMA2015Features
 
-##let
+### Сontent
+* [let](let)
+* [const](const)
+* [Spread operator](spread)
+* [Template strings](template)
+* [Multi-line strings](multiline)
+* [Function parameters](funcparam)
+* [for...of](forof)
+* [Arrow functions](arrow)
+* [Destructuring Assignment](destruction)
+  * [Array destructing](arraydestruction)
+  * [Object destructing](objectdestructing)
 
-##const
+##let <a href="let"></a>
 
-##Spread operator (оператор разворота)
+##const <a href="const"></a>
+
+##Spread operator (оператор разворота) <a href="spread"></a>
 Convert array into its separate values
 ```javascript
 functionName(...array);
@@ -20,14 +33,14 @@ var arrayCopy = [].concat(array);  // ES5 way
 ```
 ES5
 ```javascript
-Math.max.apply(Math, [2,100,1,6,43]) // 100
+Math.max.apply(Math, [2, 100, 1, 6, 43]) // 100
 ```
 ES6
 ```javascript
-Math.max(...[2,100,1,6,43]) // 100
+Math.max(...[2, 100, 1, 6, 43]) // 100
 ```
 
-##Template strings (literals)
+##Template strings (literals) <a href="template"></a>
 Template literals are enclosed by the back-tick ``` ` ` ```
 
 Consider `name` is variable
@@ -39,7 +52,7 @@ You can make calculations inside template string
 `${parseInt(x) + parseInt(y)}`
 ```
 
-##Multi-line strings
+##Multi-line strings <a href="multiline"></a>
 Use back-tick  ``` `` ``` for multi-line strings instead of concatenation ``` '\n' + '' ```
 ```javascript
 const template6 =
@@ -51,7 +64,7 @@ const template6 =
 </li>`;
 ```
 
-##Function parameters
+##Function parameters <a href="funcparam"></a>
 Set default values
 ```javascript
 function greet(greeting = 'Hello', name = 'friend') {
@@ -75,7 +88,7 @@ function sum(...values) {
 }
 ```
 
-##for...of
+##for...of <a href="forof"></a>
 
 [MDN for...of](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for...of)
 
@@ -92,9 +105,9 @@ for (let i of array) {
 }
 ```
 
-##Arrow functions
+##Arrow functions <a href="arrow"></a>
 
-**Стрелка должна идти сразу после параметров, на той же строке**
+**Стрелка должна идти сразу после параметров, на той же строке.**
 ####Two or more parameters - in brackets ```( )```
 ```javascript
 let add = (x, y) => x + y;
@@ -134,8 +147,8 @@ let task = new Task();
 ```> Uncaught TypeError: Task is not a constructor```
 * Нельзя использовать методы ```bind()```, ```call()```, ```apply()```
 
-##Destructuring Assignment (Деструктивное присваивание)
-###Array destructing
+##Destructuring Assignment (Деструктивное присваивание) <a href="destruction"></a>
+###Array destructing <a href="arraydestruction"></a>
 ```javascript
 let languages = ['JS', 'PHP', 'Python', 'Ruby'];
 let [js, php, py, rb] = languages;
@@ -206,7 +219,7 @@ let no = 'No';
 [yes, no] = [no, yes];
 ```
 
-###Object destructing
+###Object destructing <a href="objectdestructing"></a>
 
 ```javascript
 let person = {
