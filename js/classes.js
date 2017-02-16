@@ -27,7 +27,7 @@ class Task {
     }
 }
 
-Task.count = 0;
+Task.count = 0; // <-- Static variable
 
 let task = new Task('Buy food');
 let task2 = new Task('Task 2 ');
