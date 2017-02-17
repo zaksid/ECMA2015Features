@@ -23,6 +23,7 @@ Materials:
 * [Classes](#classes)
   * [Inheritance](#inheritance)
 * [Promises](#promises)
+* [Symbols](#symbols)
 
 ---
 
@@ -410,4 +411,58 @@ Promise.all([promise1, promise2, promise3])
 Promise.race([promise1, promise2, promise3])
     .then()
     .catch();
+```
+
+
+<a name="symbols"></a>
+## Symbols
+
+Declare:
+```javascript
+let symbol = Symbol('name');
+```
+
+First search for existing:
+```javascript
+let symbol = Symbol.for('name')
+```
+Equality
+```javascript
+let symbol1 = Symbol('name');
+let symbol2 = Symbol('name');
+
+console.log(symbol1 === symbol2);
+```
+```> false ```
+
+
+```javascript
+let symbolf1 = Symbol.for('namy');
+let symbolf2 = Symbol.for('namy');
+
+console.log(symbolf1 === symbolf2);
+```
+```> true ```
+
+```javascript
+let name = Symbol.keyFor(symbolf1);
+console.log(name);
+```
+```> namy```
+
+As object property
+```javascript
+let user = {
+    username: 'R2D2',
+    [Symbol.for('password')]: 'c3po'
+};
+
+console.log(user[Symbol.for('password')]);
+```
+```> c3po```
+
+New Object method
+
+```javascript
+Object.getOwnPropertySymbols(user);
 ```
