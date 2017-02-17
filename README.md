@@ -4,6 +4,8 @@ Materials:
 
 [CodeDojo. Основы ES6 (Youtube)](https://www.youtube.com/playlist?list=PLqHlAwsJRxAOpWPtj2T6HhSzX-lKmKV2q)
 
+[Обзор базовых возможностей ES6 (Habrahabr)](https://habrahabr.ru/post/313526/)
+
 
 ### Сontent
 * [let](#let)
@@ -20,6 +22,7 @@ Materials:
 * [Objects](#objects)
 * [Classes](#classes)
   * [Inheritance](#inheritance)
+* [Promises](#promises)
 
 ---
 
@@ -364,4 +367,47 @@ class SubTask extends Task {
         ...
     }
 }
+```
+
+
+<a name="promises"></a>
+## Promises
+
+Function returning promise:
+```javascript
+function applyForVisa(document) {
+    let promise = new Promise(function (resolve, reject) {
+        condition 
+            ? resolve() 
+            : reject();
+    });
+
+    return promise;
+}
+```
+
+Or another way:
+```javascript
+return Promise.resolve();
+return Promise.reject();
+```
+
+Promise result
+```javascript
+applyForVisa(document)
+    .then(bookHotel)
+    .catch(error => console.error(error));
+```
+Дождаться выполнения **всех** промисов
+```javascript
+Promise.all([promise1, promise2, promise3])
+    .then()
+    .catch();
+```
+
+Дождаться выполнения **первого** промиса
+```javascript
+Promise.race([promise1, promise2, promise3])
+    .then()
+    .catch();
 ```
