@@ -24,6 +24,7 @@ Materials:
   * [Inheritance](#inheritance)
 * [Promises](#promises)
 * [Symbols](#symbols)
+* [Iterators](#iterators) 
 
 ---
 
@@ -465,4 +466,55 @@ New Object method
 
 ```javascript
 Object.getOwnPropertySymbols(user);
+```
+
+
+<a name="iterators"></a>
+## Iterators
+
+```javascript
+let array = ['item1', 'item2', 'item3'];
+let iterator = array[Symbol.iterator]();
+
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+```
+```
+> Object {value: "item1", done: false}
+  Object {value: "item2", done: false}
+  Object {value: "item3", done: false}
+  Object {value: undefined, done: true}
+```
+
+Iterate all available objects:
+```javascript
+let next = iterator.next();
+while (!next.done) {
+    console.log(next.value);
+    next = iterator.next();
+}
+```
+Result is the same as while using `for...of`
+```
+> item1
+  item2
+  item3
+```
+### Create own iterator
+Should return object with method `next()` which returns object containing `value: any` and `done:boolean`.
+```javascript
+let myIterator = {
+    [Symbol.iterator]() {
+        return {
+            next() {
+                return {
+                    value: undefined,
+                    done: true
+                };
+            }
+        };
+    }
+};
 ```
