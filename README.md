@@ -7,6 +7,8 @@ Materials:
 [Обзор базовых возможностей ES6 (Habrahabr)](https://habrahabr.ru/post/313526/)
 
 
+<a name="content"></a>
+
 ### Сontent
 * [let](#let)
 * [const](#const)
@@ -24,19 +26,20 @@ Materials:
   * [Inheritance](#inheritance)
 * [Promises](#promises)
 * [Symbols](#symbols)
-* [Iterators](#iterators) 
+* [Iterators](#iterators)
+* [Generators](#generators)
 
 ---
 
 <a name="let"></a>
-## let
+## let [^](#content)
 
 <a name="const"></a>
-## const
+## const [^](#content)
 
 
 <a name="spread"></a>
-## Spread operator (оператор разворота) 
+## Spread operator (оператор разворота) [^](#content)
 Convert array into its separate values
 ```javascript
 functionName(...array);
@@ -61,7 +64,7 @@ Math.max(...[2, 100, 1, 6, 43]) // 100
 
 
 <a name="template"></a>
-## Template strings (literals)
+## Template strings (literals) [^](#content)
 Template literals are enclosed by the back-tick ``` ` ` ```
 
 Consider `name` is variable
@@ -74,7 +77,7 @@ You can make calculations inside template string
 ```
 
 <a name="multiline"></a>
-## Multi-line strings
+## Multi-line strings [^](#content)
 Use back-tick  ``` `` ``` for multi-line strings instead of concatenation ``` '\n' + '' ```
 ```javascript
 const template6 =
@@ -88,7 +91,7 @@ const template6 =
 
 
 <a name="funcparam"></a>
-## Function parameters
+## Function parameters [^](#content)
 Set default values
 ```javascript
 function greet(greeting = 'Hello', name = 'friend') {
@@ -114,7 +117,7 @@ or
 
 
 <a name="forof"></a>
-## for...of
+## for...of [^](#content)
 
 [MDN for...of](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for...of)
 
@@ -133,7 +136,7 @@ for (let i of array) {
 
 
 <a name="arrow"></a>
-## Arrow functions
+## Arrow functions [^](#content)
 
 **Стрелка должна идти сразу после параметров, на той же строке.**
 #### Two or more parameters - in brackets ```( )```
@@ -177,9 +180,9 @@ let task = new Task();
 
 
 <a name="destruction"></a>
-## Destructuring Assignment (Деструктивное присваивание)
+## Destructuring Assignment (Деструктивное присваивание) [^](#content)
 
-<a name="arraydestruction"></a>
+<a name="arraydestruction"></a> [^](#content)
 ### Array destructing
 ```javascript
 let languages = ['JS', 'PHP', 'Python', 'Ruby'];
@@ -254,7 +257,7 @@ let no = 'No';
 ```
 
 <a name="objectdestructing"></a>
-### Object destructing
+### Object destructing [^](#content)
 
 ```javascript
 let person = {
@@ -290,7 +293,7 @@ Object spread only includes own, enumerable properties. That means you lose meth
 
 
 <a name="objects"></a>
-## Objects
+## Objects [^](#content)
 Если названия свойств совпадают с названиями переменных - можно указать только свойства.
 ```javascript
 let firstName = 'Bill',
@@ -312,7 +315,7 @@ person.sayHello();
 
 
 <a name="classes"></a>
-## Classes
+## Classes [^](#content)
 
 * Классы не попадают в глобальное пространство имен (window в браузере).
 * Классы не всплывают (hoisting).
@@ -345,7 +348,7 @@ let SubClazz = class extends Clazz { ... }
 ```
 
 <a name="inheritance"></a>
-### Inheritance
+### Inheritance [^](#content)
 
 ```javascript
 class Task {
@@ -373,7 +376,7 @@ class SubTask extends Task {
 
 
 <a name="promises"></a>
-## Promises
+## Promises [^](#content)
 
 Function returning promise:
 ```javascript
@@ -416,7 +419,7 @@ Promise.race([promise1, promise2, promise3])
 
 
 <a name="symbols"></a>
-## Symbols
+## Symbols [^](#content)
 
 Declare:
 ```javascript
@@ -470,7 +473,7 @@ Object.getOwnPropertySymbols(user);
 
 
 <a name="iterators"></a>
-## Iterators
+## Iterators [^](#content)
 
 ```javascript
 let array = ['item1', 'item2', 'item3'];
@@ -517,4 +520,94 @@ let myIterator = {
         };
     }
 };
+```
+
+
+<a name="generators"></a>
+## Generators [^](#content)
+
+### Define function as generator with `*`:
+```javascript
+function* generator() { ... }
+```
+or
+```javascript
+function * generator() { ... }
+```
+or
+```javascript
+function *generator() { ... }
+```
+or
+```javascript
+let generator = function*() { ... }
+```
+
+### Define in Object method
+```javascript
+let obj = {
+    *generator() { ... }
+}
+```
+
+### Define in class
+```javascript
+class Clazz {
+    *generator() { ... }
+}
+```
+---
+Stop function and return any value:
+```javascript
+yield value;
+```
+
+```javascript
+let iterator = generator();
+iterator.next()
+```
+Value can be sent:
+```javascript
+iterator.next([value])
+```
+```javascript
+function* genny() {
+    let result = 1 + (yield);
+    console.log(`Result: ${result}`);
+}
+
+iter = genny();
+console.log(iter.next());
+console.log(iter.next(1));
+```
+
+```
+> Object {value: undefined, done: false}
+  Result: 2
+  Object {value: undefined, done: true}
+```
+
+Get value:
+```javascript
+iterator.next().value
+```
+Stop generator:
+```javascript
+iterator.return()
+```
+Throw an error:
+```javascript
+iterator.throw(new Error('Error'))
+```
+Can be processed in generator
+```javascript
+function* generator() {
+    try {
+        yield 1;
+        yield 2;
+        yield 3;
+    } catch (e) {
+        console.error(e);
+    }
+}
 ```
