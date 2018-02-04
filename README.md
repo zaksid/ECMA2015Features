@@ -32,14 +32,14 @@ Materials:
 ---
 
 <a name="let"></a>
-## let [^](#content)
+## let [↑](#content)
 
 <a name="const"></a>
-## const [^](#content)
+## const [↑](#content)
 
 
 <a name="spread"></a>
-## Spread operator (оператор разворота) [^](#content)
+## Spread operator (оператор разворота) [↑](#content)
 Convert array into its separate values
 ```javascript
 functionName(...array);
@@ -64,7 +64,7 @@ Math.max(...[2, 100, 1, 6, 43]) // 100
 
 
 <a name="template"></a>
-## Template strings (literals) [^](#content)
+## Template strings (literals) [↑](#content)
 Template literals are enclosed by the back-tick ``` ` ` ```
 
 Consider `name` is variable
@@ -77,7 +77,7 @@ You can make calculations inside template string
 ```
 
 <a name="multiline"></a>
-## Multi-line strings [^](#content)
+## Multi-line strings [↑](#content)
 Use back-tick  ``` `` ``` for multi-line strings instead of concatenation ``` '\n' + '' ```
 ```javascript
 const template6 =
@@ -91,7 +91,7 @@ const template6 =
 
 
 <a name="funcparam"></a>
-## Function parameters [^](#content)
+## Function parameters [↑](#content)
 Set default values
 ```javascript
 function greet(greeting = 'Hello', name = 'friend') {
@@ -117,7 +117,7 @@ or
 
 
 <a name="forof"></a>
-## for...of [^](#content)
+## for...of [↑](#content)
 
 [MDN for...of](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/for...of)
 
@@ -136,7 +136,7 @@ for (let i of array) {
 
 
 <a name="arrow"></a>
-## Arrow functions [^](#content)
+## Arrow functions [↑](#content)
 
 **Стрелка должна идти сразу после параметров, на той же строке.**
 #### Two or more parameters - in brackets ```( )```
@@ -180,10 +180,10 @@ let task = new Task();
 
 
 <a name="destruction"></a>
-## Destructuring Assignment (Деструктивное присваивание) [^](#content)
+## Destructuring Assignment (Деструктивное присваивание) [↑](#content)
 
-<a name="arraydestruction"></a> [^](#content)
-### Array destructing
+<a name="arraydestruction"></a>
+### Array destructing [↑](#content)
 ```javascript
 let languages = ['JS', 'PHP', 'Python', 'Ruby'];
 let [js, php, py, rb] = languages;
@@ -257,7 +257,7 @@ let no = 'No';
 ```
 
 <a name="objectdestructing"></a>
-### Object destructing [^](#content)
+### Object destructing [↑](#content)
 
 ```javascript
 let person = {
@@ -293,7 +293,7 @@ Object spread only includes own, enumerable properties. That means you lose meth
 
 
 <a name="objects"></a>
-## Objects [^](#content)
+## Objects [↑](#content)
 Если названия свойств совпадают с названиями переменных - можно указать только свойства.
 ```javascript
 let firstName = 'Bill',
@@ -315,7 +315,7 @@ person.sayHello();
 
 
 <a name="classes"></a>
-## Classes [^](#content)
+## Classes [↑](#content)
 
 * Классы не попадают в глобальное пространство имен (window в браузере).
 * Классы не всплывают (hoisting).
@@ -348,7 +348,7 @@ let SubClazz = class extends Clazz { ... }
 ```
 
 <a name="inheritance"></a>
-### Inheritance [^](#content)
+### Inheritance [↑](#content)
 
 ```javascript
 class Task {
@@ -376,7 +376,7 @@ class SubTask extends Task {
 
 
 <a name="promises"></a>
-## Promises [^](#content)
+## Promises [↑](#content)
 
 Function returning promise:
 ```javascript
@@ -419,7 +419,7 @@ Promise.race([promise1, promise2, promise3])
 
 
 <a name="symbols"></a>
-## Symbols [^](#content)
+## Symbols [↑](#content)
 
 Declare:
 ```javascript
@@ -473,7 +473,7 @@ Object.getOwnPropertySymbols(user);
 
 
 <a name="iterators"></a>
-## Iterators [^](#content)
+## Iterators [↑](#content)
 
 ```javascript
 let array = ['item1', 'item2', 'item3'];
@@ -524,7 +524,7 @@ let myIterator = {
 
 
 <a name="generators"></a>
-## Generators [^](#content)
+## Generators [↑](#content)
 
 ### Define function as generator with `*`:
 ```javascript
