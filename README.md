@@ -178,6 +178,10 @@ let task = new Task();
 ```> Uncaught TypeError: Task is not a constructor```
 * Нельзя использовать методы `bind()`, `call()`, `apply()`
 
+Стрелочные ф-ции полезны:
+* анономные ф-ции
+* методы класса
+
 
 <a name="destruction"></a>
 ## Destructuring Assignment (Деструктивное присваивание) [↑](#content)
