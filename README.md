@@ -526,6 +526,10 @@ let myIterator = {
 };
 ```
 
+**Literature:**
+
+[[habr] Итерируемые объекты и итераторы](https://habr.com/ru/company/mailru/blog/533822/)
+
 
 <a name="generators"></a>
 ## Generators [↑](#content)
